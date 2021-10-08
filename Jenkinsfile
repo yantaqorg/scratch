@@ -1,5 +1,6 @@
 #!/usr/bin/env groovy
-@Library('sharedNextLibrary') _
+@Library('sharedLibrary') _
+
 
 def REPO = getRepoName()
 
@@ -11,7 +12,8 @@ podTemplate {
         }
         stage('cat Jenkinsfile') {
             sh 'cat Jenkinsfile'
-            sh "cat repo: $REPO"
+            sh "echo repo: $REPO"
         }
     }
 }
+
