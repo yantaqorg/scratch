@@ -15,12 +15,13 @@ podTemplate {
             sh "echo repo: $REPO"
         }
         stage('test sh echo') {
-           def stdout = sh(
-                script:"""#!/bin/bash -l
+           // def stdout = sh(
+                // script:"""#!/bin/bash -l
+                sh """#!/bin/bash -l
                       ./echo.sh
-                    """, 
-                    returnStdout: true
-          )
+                """ 
+                    // returnStdout: true
+          //)
         }
     }
 }
