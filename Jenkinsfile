@@ -13,6 +13,14 @@ podTemplate {
             sh 'cat Jenkinsfile'
             sh "echo repo: $REPO"
         }
+        stage('test sh echo') {
+           def stdout = sh(
+                script:"""#!/bin/bash -l
+                      ./echo.sh
+                    """, 
+                    returnStdout: true
+          )
+        }
     }
 }
 
